@@ -1,14 +1,14 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography } from '@mui/material';
-import { useLocation } from 'react-router-dom';
+import React from "react";
+import { AppBar, Toolbar, Typography } from "@mui/material";
+import { useLocation } from "react-router-dom";
 
 const TopBar = ({ currentUserName }) => {
   const location = useLocation();
-  let contextText = '';
+  let contextText = "";
 
-  if (location.pathname.startsWith('/photos/')) {
+  if (location.pathname.startsWith("/photos/")) {
     contextText = `Photos of ${currentUserName}`;
-  } else if (location.pathname.startsWith('/users/')) {
+  } else if (location.pathname.startsWith("/users/")) {
     contextText = currentUserName;
   }
 
@@ -16,11 +16,9 @@ const TopBar = ({ currentUserName }) => {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" style={{ flexGrow: 1 }}>
-          Tên của bạn
+          Photo Sharing
         </Typography>
-        <Typography variant="subtitle1">
-          {contextText}
-        </Typography>
+        <Typography variant="subtitle1">{contextText}</Typography>
       </Toolbar>
     </AppBar>
   );
